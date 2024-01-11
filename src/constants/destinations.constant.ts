@@ -2,6 +2,8 @@ import { TDestination } from "@/types/destinations.types";
 
 const DESTINATIONS: TDestination[] = [
   {
+    id: 1,
+
     title: "Barça Game Experience!",
 
     price: 500,
@@ -13,6 +15,8 @@ const DESTINATIONS: TDestination[] = [
     imageUrl: "/barca-game.jpeg",
   },
   {
+    id: 2,
+
     title: "Last Nadal Season!",
 
     price: 1500,
@@ -24,6 +28,8 @@ const DESTINATIONS: TDestination[] = [
     imageUrl: "/last-nadal.season.jpeg",
   },
   {
+    id: 3,
+
     title: "New Berbabeu FULL Experience!",
 
     price: 880,
@@ -35,6 +41,8 @@ const DESTINATIONS: TDestination[] = [
     imageUrl: "/new-bernabeu-experience.jpeg",
   },
   {
+    id: 4,
+
     title: "Snowboard at Sierra Nevada",
 
     price: 930,
@@ -46,6 +54,8 @@ const DESTINATIONS: TDestination[] = [
     imageUrl: "/sierra-nevada-snowboard.jpeg",
   },
   {
+    id: 5,
+
     title: "Women Worldcup Adventure",
 
     price: 3000,
