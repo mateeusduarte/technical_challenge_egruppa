@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import styles from "./page.module.css";
+import ThemeProvider from "../providers/theme-provider";
+import { CurrencyProvider } from "../providers/currency-provider";
+import { DestinationProvider } from "@/providers/destination-provider";
 
 export const metadata: Metadata = {
   title: "Egruppa",
@@ -15,7 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={styles.body}>
+        <ThemeProvider>
+          <DestinationProvider>
+            <CurrencyProvider>{children}</CurrencyProvider>
+          </DestinationProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

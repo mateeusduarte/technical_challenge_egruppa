@@ -1,12 +1,12 @@
 import dynamic from "next/dynamic";
 
-import HomePage from "@/components/pages/Home";
-import styles from "./page.module.css";
+import PackageDetailsPage from "@/components/pages/PackageDetails";
+import styles from "../../page.module.css";
 
 function Page() {
   return (
     <main className={styles.main}>
-      <HomePage />
+      <PackageDetailsPage />
     </main>
   );
 }
