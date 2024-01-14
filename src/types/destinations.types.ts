@@ -10,4 +10,6 @@ export type TDestination = {
   previousPrice: number;
 
   imageUrl: string;
+
+  description: string;
 };

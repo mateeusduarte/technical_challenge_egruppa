@@ -13,6 +13,7 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
+  z-index: 9999999;
 `;
 
 export const TalkToUsText = styled(Typography)`

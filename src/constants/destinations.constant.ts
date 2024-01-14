@@ -13,6 +13,8 @@ const DESTINATIONS: TDestination[] = [
     previousPrice: 800,
 
     imageUrl: "/barca-game.jpeg",
+
+    description: "Immerse yourself in the thrill of a live Barcelona FC game.",
   },
   {
     id: 2,
@@ -25,12 +27,14 @@ const DESTINATIONS: TDestination[] = [
 
     previousPrice: 2800,
 
-    imageUrl: "/last-nadal.season.jpeg",
+    imageUrl: "/last-nadal-season.avif",
+
+    description: "Witness the final season of Rafael Nadal's legendary career.",
   },
   {
     id: 3,
 
-    title: "New Berbabeu FULL Experience!",
+    title: "New Berbabeu Experience!",
 
     price: 880,
 
@@ -39,6 +43,8 @@ const DESTINATIONS: TDestination[] = [
     previousPrice: 1300,
 
     imageUrl: "/new-bernabeu-experience.jpeg",
+
+    description: "Explore the newly renovated Bernabeu Stadium.",
   },
   {
     id: 4,
@@ -52,6 +58,9 @@ const DESTINATIONS: TDestination[] = [
     previousPrice: 2000,
 
     imageUrl: "/sierra-nevada-snowboard.jpeg",
+
+    description:
+      "Conquer the slopes of Sierra Nevada in a 9-day snowboarding adventure.",
   },
   {
     id: 5,
@@ -65,6 +74,8 @@ const DESTINATIONS: TDestination[] = [
     previousPrice: 4200,
 
     imageUrl: "/women-worldcup.jpeg",
+
+    description: "Experience the excitement of the Women's World Cup.",
   },
 ];
 

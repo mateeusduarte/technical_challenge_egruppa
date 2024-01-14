@@ -1,4 +1,5 @@
 "use client";
+import CURRENCIES from "@/constants/currency.constants";
 import currencyService from "@/services/currency.services";
 import { TCurrencyValue } from "@/types/currency.types";
 import { createContext, useContext, useEffect, useState } from "react";
@@ -11,6 +12,7 @@ export type CurrencyContextProps = {
   currency: TCurrencyValue;
   changeCurrency: (_currency: TCurrencyValue) => void;
   valueToEuro: number;
+  symbol: string;
 };
 export const CurrencyContext = createContext<CurrencyContextProps>(
   {} as CurrencyContextProps
@@ -34,10 +36,12 @@ export const CurrencyProvider = ({ children }: CurrencyProviderProps) => {
     }
   }, [currency]);
 
+  const symbol = CURRENCIES.find((cur) => cur.value === currency)?.label || "";
   const contextValue = {
     currency,
     changeCurrency,
-    valueToEuro: 1,
+    valueToEuro,
+    symbol,
   };
   return (
     <CurrencyContext.Provider value={contextValue}>
