@@ -1,6 +1,7 @@
 "use client";
-import currencyService from "@/services/currency.services";
-import { TCurrencyValue } from "@/types/currency.types";
+import DESTINATIONS from "@/constants/destinations.constant";
+
+import { TDestination } from "@/types/destinations.types";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 
@@ -12,6 +13,7 @@ export type DestinationContextProps = {
   destinationId?: number;
   setDestinationId: (id: number) => void;
   clearSelectedDestination: () => void;
+  selectedDestination?: TDestination;
 };
 export const DestinationContext = createContext<DestinationContextProps>(
   {} as DestinationContextProps
@@ -20,7 +22,6 @@ export const DestinationContext = createContext<DestinationContextProps>(
 export const DestinationProvider = ({ children }: DestinationProviderProps) => {
   const params = useParams<{ id: string }>();
   const router = useRouter();
-  const pathname = usePathname();
 
   const [destinationId, setDestinationId] = useState<number | undefined>(
     params?.id ? Number(params?.id) : undefined
@@ -36,10 +37,15 @@ export const DestinationProvider = ({ children }: DestinationProviderProps) => {
     setDestinationId(undefined);
   };
 
+  const selectedDestination = DESTINATIONS.find(
+    (destination) => destination.id === destinationId
+  );
+
   const contextValue = {
     destinationId,
     setDestinationId,
     clearSelectedDestination,
+    selectedDestination,
   };
   return (
     <DestinationContext.Provider value={contextValue}>
