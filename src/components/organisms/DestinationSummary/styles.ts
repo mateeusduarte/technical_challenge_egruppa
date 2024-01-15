@@ -16,7 +16,7 @@ export const DaysTag = styled(Chip)`
   position: absolute;
   top: 20px;
   right: 23%;
-  z-index: 9999;
+  z-index: 99;
   color: white;
   transform: rotate(0.03turn);
 `;

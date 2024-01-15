@@ -10,7 +10,7 @@ export const HotelCardContainer = styled(Box)`
 `;
 
 export const TypeTag = styled(Chip)`
-  z-index: 9999;
+  z-index: 99;
   color: #e62f40;
   border: 2px solid #e62f40;
   font-weight: 600;
@@ -18,7 +18,7 @@ export const TypeTag = styled(Chip)`
 `;
 
 export const RatingTag = styled(Chip)`
-  z-index: 9999;
+  z-index: 99;
   color: white;
   font-weight: 600;
   font-size: 10px;
@@ -33,7 +33,7 @@ export const RatingTag = styled(Chip)`
 `;
 
 export const FeaturesTag = styled(Chip)`
-  z-index: 9999;
+  z-index: 99;
   color: #9e8629;
   border: 2px solid #9e8629;
   font-weight: 600;

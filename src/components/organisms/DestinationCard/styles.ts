@@ -29,7 +29,7 @@ export const BestSellerTag = styled(Chip)`
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 9999;
+  z-index: 99;
   color: white;
 `;
 
@@ -66,7 +66,7 @@ export const DiscountTag = styled(Chip)`
   position: absolute;
   bottom: 20px;
   right: 20px;
-  z-index: 9999;
+  z-index: 99;
   color: white;
   transform: rotate(-0.03turn);
 `;
