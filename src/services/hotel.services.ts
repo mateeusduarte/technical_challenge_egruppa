@@ -9,7 +9,7 @@ class HotelService {
       const id = Math.floor(Math.random() * 1000);
 
       const response = await axios.get(
-        `http://api.egruppa.com/accommodations/${id}`
+        `https://api.egruppa.com/accommodations/${id}`
       );
       hotels.push(response.data);
     }
