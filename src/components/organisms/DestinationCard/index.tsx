@@ -12,18 +12,22 @@ import {
 import { TDestination } from "@/types/destinations.types";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import messages from "./messages";
 
-type DesinationCardProps = {
+type DestinationCardProps = {
   destination: TDestination;
   onClick: () => void;
 };
 export default function DestinationCard({
   destination,
   onClick,
-}: DesinationCardProps) {
+}: DestinationCardProps) {
   const { symbol, valueToEuro } = useCurrency();
 
-  const value = (destination.previousPrice / valueToEuro).toFixed(2);
+  const previousPriceValue = (destination.previousPrice / valueToEuro).toFixed(
+    2
+  );
+  const priceValue = (destination.price / valueToEuro).toFixed(2);
   const discountPercentage =
     ((destination.previousPrice - destination.price) /
       destination.previousPrice) *
@@ -47,24 +51,22 @@ export default function DestinationCard({
       <ContentContainer>
         <Typography>{destination.description} </Typography>
 
-        <LengthText>{destination.length} days</LengthText>
+        <LengthText>
+          {destination.length} {messages.days}
+        </LengthText>
+
         <Box display="flex" flexDirection="column">
-          <Typography
-            display="flex"
-            alignItems="center"
-            gap="5px"
-            style={{ height: 20 }}
-          >
-            From
-            <p style={{ textDecoration: "line-through" }}>
+          <Box display="flex" alignItems="center" gap="5px">
+            <Typography style={{ height: 20 }}>{messages.fromText}</Typography>
+            <Typography style={{ textDecoration: "line-through", height: 20 }}>
               {symbol}
-              {value}
-            </p>
-          </Typography>
+              {previousPriceValue}
+            </Typography>
+          </Box>
 
           <Typography fontSize={20} fontWeight={600}>
             {symbol}
-            {destination.price}
+            {priceValue}
           </Typography>
         </Box>
         <DiscountTag

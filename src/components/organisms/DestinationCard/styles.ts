@@ -1,9 +1,9 @@
 import { Box, Chip, Typography, styled } from "@mui/material";
 import { TDestinationCardContainerProps } from "./types";
 
-export const DestinationCardContainer = styled(
-  Box
-)<TDestinationCardContainerProps>`
+export const DestinationCardContainer = styled(Box, {
+  shouldForwardProp: (props) => props !== "destinationId",
+})<TDestinationCardContainerProps>`
   min-width: 100%;
   max-width: 100%;
   min-height: 100%;

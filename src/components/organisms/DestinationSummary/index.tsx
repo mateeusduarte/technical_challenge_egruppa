@@ -11,6 +11,7 @@ import {
 import { Box, Typography } from "@mui/material";
 import useCurrency from "@/providers/currency-provider";
 import useBreakpoint from "@/hooks/use-breakpoints";
+import messages from "./messages";
 
 type DestinationSummaryProps = {
   destination: TDestination;
@@ -23,7 +24,10 @@ export default function DestinationSummary({
 
   const { title, imageUrl, description, length } = destination;
 
-  const value = (destination.previousPrice / valueToEuro).toFixed(2);
+  const previousPriceValue = (destination.previousPrice / valueToEuro).toFixed(
+    2
+  );
+  const priceValue = (destination.price / valueToEuro).toFixed(2);
 
   const isMobile = breakpoint === "xs";
   const isTablet = breakpoint === "sm";
@@ -47,6 +51,7 @@ export default function DestinationSummary({
             width={0}
             height={0}
             sizes="100vw"
+            priority
             style={{
               width: imageWidth,
               height: "100%",
@@ -55,7 +60,7 @@ export default function DestinationSummary({
             src={imageUrl}
             alt={`Image of destination named "${title}" `}
           />
-          <DaysTag label={`${length} days`} color="primary" />
+          <DaysTag label={`${length} ${messages.days}`} color="primary" />
         </Box>
 
         <Box
@@ -73,23 +78,23 @@ export default function DestinationSummary({
           </Box>
 
           <PriceBox display="flex" flexDirection="column" alignSelf="flex-end">
-            <Typography
-              fontSize={20}
-              display="flex"
-              alignItems="center"
-              style={{ height: 20 }}
-              color="white"
-            >
-              From
-              <p style={{ textDecoration: "line-through" }}>
+            <Box display="flex" alignItems="center" gap="5px">
+              <Typography fontSize={20} style={{ height: 20 }} color="white">
+                {messages.fromText}
+              </Typography>
+              <Typography
+                style={{ textDecoration: "line-through", height: 20 }}
+                fontSize={20}
+                color="white"
+              >
                 {symbol}
-                {value}
-              </p>
-            </Typography>
+                {previousPriceValue}
+              </Typography>
+            </Box>
 
             <Typography fontSize={40} fontWeight={600} color="white">
               {symbol}
-              {destination.price}
+              {priceValue}
             </Typography>
           </PriceBox>
         </Box>

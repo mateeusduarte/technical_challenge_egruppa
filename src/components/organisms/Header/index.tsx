@@ -15,6 +15,7 @@ import Link from "next/link";
 import useCurrency from "@/providers/currency-provider";
 import useDestination from "@/providers/destination-provider";
 import { useRouter } from "next/navigation";
+import messages from "./messages";
 export default function Header() {
   const { destinationId, setDestinationId, clearSelectedDestination } =
     useDestination();
@@ -53,7 +54,7 @@ export default function Header() {
               name="destination"
               value={destinationId?.toString() ?? ""}
               onChange={(e) => setDestinationId(Number(e.target.value))}
-              label="Destination"
+              label={messages.destinationLabel}
             >
               {SELECT_OPTIONS.map((option, index) => {
                 const { label, value } = option;
@@ -73,7 +74,7 @@ export default function Header() {
             <TextField
               select
               name="currency"
-              label="Currency"
+              label={messages.currencyLabel}
               value={currency}
               onChange={(e) => changeCurrency(e.target.value as TCurrencyValue)}
             >
@@ -99,7 +100,7 @@ export default function Header() {
               target="_blank"
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <TalkToUsText>Talk to us!</TalkToUsText>
+              <TalkToUsText>{messages.talkToUs}</TalkToUsText>
             </Link>
           </Box>
         </Box>

@@ -35,6 +35,7 @@ export default function HomePage() {
           width={0}
           height={0}
           sizes="100vw"
+          priority
         />
       </ImageContainer>
       <PageTitle fontSize={titleFontSize}>

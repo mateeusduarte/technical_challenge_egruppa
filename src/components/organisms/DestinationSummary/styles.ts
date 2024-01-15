@@ -2,6 +2,7 @@ import { Box, Chip, Typography, styled } from "@mui/material";
 
 export const DestinationSummaryContainer = styled(Box)`
   margin-top: 85px;
+  padding-bottom: 30px;
 `;
 
 export const SummaryTitle = styled(Typography)`
